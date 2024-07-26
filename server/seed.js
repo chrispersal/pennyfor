@@ -3,7 +3,9 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const db = new pg.Pool({ connectionString: process.env."postgresql://postgres.quysmmwmiipxrjnzgbkv:bNqsj92Mn3ODkqEf@aws-0-eu-west-2.pooler.supabase.com:6543/postgres" });
+const db = new pg.Pool({ connectionString: process.env.DATABASE_CONNECTION });
+// KEY inside .env
+// postgresql://postgres.quysmmwmiipxrjnzgbkv:bNqsj92Mn3ODkqEf@aws-0-eu-west-2.pooler.supabase.com:6543/postgres
 
 // create the table
 db.query(`

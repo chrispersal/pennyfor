@@ -6,7 +6,9 @@ form.addEventListener("submit", async function (event) {
   const formData = new FormData(form);
   const formValues = Object.fromEntries(formData);
 
-  const response = await fetch("https://quysmmwmiipxrjnzgbkv.supabase.co", {
+  // fetch to server.js endpoint - will connect THAT to Supabase
+  //
+  const response = await fetch("https://localhost:8080/entries", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -9,6 +9,8 @@ app.use(cors());
 app.use(express.json()); // so we can use the request body
 dotenv.config();
 
+const db = new pg.Pool({ connectionString: process.env.DATABASE_CONNECTION });
+
 app.get("/", function (req, res) {
   res.json("Radical simply means grasping things at the root.");
 });

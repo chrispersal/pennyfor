@@ -5,20 +5,20 @@ import dotenv from "dotenv";
 
 const app = express();
 app.use(cors());
-app.use(express.json()); // this line lets us use the "body" from the request
+app.use(express.json()); // so we can use the request body
 dotenv.config();
 
 app.get("/", function (req, res) {
-  res.json("Woah! You found the secret API!");
+  res.json("Radical simply means grasping things at the root.");
 });
 
 app.post("/entries", function (req, res) {
-  // retrieve the information from the form
+  // retrieve data from form
   console.log(req.body);
-  // here we would add our new joke to the database
+  // add new entry to database
   res.json("Recieved it.");
 });
 
 app.listen(8080, function () {
-  console.log("Server is running on port 8080");
+  console.log("Server is running on port 8080.");
 });

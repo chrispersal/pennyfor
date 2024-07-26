@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 const app = express();
+const cors = require("cors");
 app.use(cors());
 app.use(express.json()); // so we can use the request body
 dotenv.config();

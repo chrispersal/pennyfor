@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 app.use(cors());
 app.use(express.json()); // so we can use the request body
 dotenv.config();
@@ -41,7 +41,7 @@ app.post("/entries", async (req, res) => {
 
 app.get("/entries", async (req, res) => {
   try {
-    const entries = await db.all("SELECT * FROM entries");
+    const entries = await db.query("SELECT * FROM entries");
     res.json(entries);
   } catch (error) {
     console.error("Error retrieving messages:", error);
